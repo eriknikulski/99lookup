@@ -13,7 +13,8 @@
   "content_scripts": [
     {
       "matches": ["*://liga.99damage.de/de/leagues/teams/*"],
-      "js": ["99lookup.js"]
+      "js": ["99lookup.js"],
+      "css": ["style.css"]
     }
   ],
 

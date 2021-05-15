@@ -1,0 +1,10 @@
+.l99l-container {
+    position: relative;
+    margin: 20px 10px 0 10px;
+    padding: 20px;
+    background: #fff;
+}
+
+.l99l-table th, td {
+    padding: 10px;
+}
