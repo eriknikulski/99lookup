@@ -95,7 +95,10 @@ function displayInfo(data, labels=['Maps', '1st ban', '2nd ban', 'Pick']) {
     tr.appendChild(th);
 
     for (const map in data) {
-      let td = document.createElement('th');
+      let td = document.createElement('td');
+      let h = 120 - data[map][attr] * 120;
+      let l = data[map][attr] !== 0 ? 80 : 95 ;
+      td.style.setProperty('background', 'hsl(' + h + ', 100%, ' + l + '%)');
       td.textContent = (data[map][attr] * 100).toFixed() + '%';
       tr.appendChild(td);
     }
