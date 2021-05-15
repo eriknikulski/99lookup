@@ -20,7 +20,7 @@
 
   "permissions": [
     "webRequest",
-    "*99damage.de*"
+    "*://*.99damage.de/*"
   ]
 
 }
