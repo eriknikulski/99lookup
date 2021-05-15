@@ -1,4 +1,3 @@
-
 function getTeamID() {
   const regex = /.*:\/\/liga.99damage.de\/de\/leagues\/teams\/(\d+).*/i;
   const  matches = window.location.href.match(regex);
@@ -131,7 +130,6 @@ function getTeamInfo() {
           'pick': round(matches.map(match => match[2]).filter(match => match === maps[i]).length / count),
         };
       }
-      console.log(data);
       return data;
     })
     .then(data => displayInfo(data));
