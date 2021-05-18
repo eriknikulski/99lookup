@@ -2,7 +2,7 @@
 
   "manifest_version": 2,
   "name": "99lookup",
-  "version": "1.0.1",
+  "version": "1.0.2",
 
   "description": "Matchvote lookup for 99damage.",
 
@@ -19,7 +19,6 @@
   ],
 
   "permissions": [
-    "webRequest",
     "*://*.99damage.de/*"
   ]
 
