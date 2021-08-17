@@ -2,7 +2,7 @@
 
   "manifest_version": 2,
   "name": "99lookup",
-  "version": "1.0.3",
+  "version": "1.0.4",
 
   "description": "Matchvote lookup for 99damage.",
 
@@ -12,7 +12,7 @@
 
   "content_scripts": [
     {
-      "matches": ["*://liga.99damage.de/de/leagues/teams/*"],
+      "matches": ["*://liga.99damage.de/leagues/teams/*"],
       "js": ["99lookup.js"],
       "css": ["style.css"]
     }

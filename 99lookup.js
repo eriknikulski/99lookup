@@ -1,5 +1,5 @@
 function getTeamID() {
-  const regex = /.*:\/\/liga.99damage.de\/de\/leagues\/teams\/(\d+).*/i;
+  const regex = /.*:\/\/liga.99damage.de\/leagues\/teams\/(\d+).*/i;
   const  matches = window.location.href.match(regex);
   if (matches.length === 2) {
     return matches[1];
@@ -21,7 +21,7 @@ function getMatches() {
   const matchIDs = [];
 
   const text = document.querySelector('.league-stage-matches').innerHTML;
-  const regex = /.*:\/\/liga.99damage.de\/de\/leagues\/matches\/(\d+).*/g;
+  const regex = /.*:\/\/liga.99damage.de\/leagues\/matches\/(\d+).*/g;
   const matches = text.matchAll(regex);
   for (const match of matches) {
     if (match.length === 2) {
@@ -50,11 +50,11 @@ function getMatchInfo(matchID, teamName) {
       let info = [];
       if (json['status'] !== 'finished') return;
       const _getMapName = (id) => getMapName(json['draft_maps'], id);
-      if (json['draft_opp1'] === teamName) {
+      if (json['draft_opp1'].toLowerCase() === teamName.toLowerCase()) {
         info.push(_getMapName(json['draft_mapvoting_bans'][0]));
         info.push(_getMapName(json['draft_mapvoting_bans'][3]));
         info.push(_getMapName(json['draft_mapvoting_picks'][1]));
-      } else if (json['draft_opp2'] === teamName) {
+      } else if (json['draft_opp2'].toLowerCase() === teamName.toLowerCase()) {
         info.push(_getMapName(json['draft_mapvoting_bans'][1]));
         info.push(_getMapName(json['draft_mapvoting_bans'][2]));
         info.push(_getMapName(json['draft_mapvoting_picks'][0]));
@@ -65,7 +65,7 @@ function getMatchInfo(matchID, teamName) {
 }
 
 function getMaps() {
-  return ['de_dust2', 'de_inferno', 'de_mirage', 'de_nuke', 'de_overpass', 'de_train', 'de_vertigo'];
+  return ['de_dust2', 'de_inferno', 'de_mirage', 'de_nuke', 'de_overpass', 'de_ancient', 'de_vertigo'];
 }
 
 function displayInfo(data, labels=['Maps', '1st ban', '2nd ban', 'Pick']) {
